@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   splashScreenStart() {
     var duration = const Duration(seconds: 3);
     return Timer(duration, () {
-      Get.to(LandingPage());
+      Get.off(const LandingPage());
     });
   }
 
@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color(0xfff0f66e),
+        color: const Color(0xfff0f66e),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Image.asset("assets/logos_black.png"),
