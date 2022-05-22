@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:postest6_2009106054_vauwez/controller.dart';
 import 'package:postest6_2009106054_vauwez/detail_page.dart';
 import 'form_page.dart';
 import 'landing_page.dart';
@@ -11,60 +10,60 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xfff0f8ea),
+        backgroundColor: const Color(0xfff0f8ea),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          iconTheme: IconThemeData(color: Color(0xff333333)),
+          iconTheme: const IconThemeData(color: Color(0xff333333)),
         ),
         drawer: Drawer(
           child: ListView(children: [
-            DrawerHeader(
+            const DrawerHeader(
                 child: ListTile(
               leading: Icon(Icons.person),
               title: Text("Vauwez Sam El Fareez"),
             )),
             ListTile(
-              title: Text("Keluar"),
-              leading: Icon(Icons.logout),
+              title: const Text("Keluar"),
+              leading: const Icon(Icons.logout),
               onTap: () {
-                Get.off(LandingPage());
+                Get.off(const LandingPage());
               },
             )
           ]),
         ),
         body: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 17),
+          padding: const EdgeInsets.symmetric(horizontal: 17),
           children: [
-            Text(
+            const Text(
               "Halo, Vauwez Sam El Fareez",
               style: TextStyle(fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
-            Text(
+            const Text(
               "Temukan Doktermu",
               style: TextStyle(fontSize: 27),
             ),
-            SizedBox(
+            const SizedBox(
               height: 27,
             ),
             TextField(
               decoration: InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(vertical: 15),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 15),
                   fillColor: Colors.white,
                   filled: true,
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15)),
-                  disabledBorder: OutlineInputBorder(
+                  disabledBorder: const OutlineInputBorder(
                       borderSide:
                           BorderSide(color: Color(0xffa8c686), width: 1)),
                   hintText: "Cari dokter",
-                  hintStyle: TextStyle(fontFamily: "PoppinsRegular"),
-                  prefixIcon: Icon(Icons.search)),
+                  hintStyle: const TextStyle(fontFamily: "PoppinsRegular"),
+                  prefixIcon: const Icon(Icons.search)),
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
             ),
             Row(
@@ -72,15 +71,15 @@ class MainPage extends StatelessWidget {
               children: [
                 Expanded(
                     child: Container(
-                  padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.only(right: 6),
+                  padding: const EdgeInsets.all(10),
+                  margin: const EdgeInsets.only(right: 6),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: Color(0xffa8c686)),
+                      color: const Color(0xffa8c686)),
                   height: 90,
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Icon(
                           Icons.medication,
                           color: Colors.white,
@@ -94,15 +93,15 @@ class MainPage extends StatelessWidget {
                 )),
                 Expanded(
                     child: Container(
-                  padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.only(left: 6),
+                  padding: const EdgeInsets.all(10),
+                  margin: const EdgeInsets.only(left: 6),
                   decoration: BoxDecoration(
-                      color: Color(0xff9d9c62),
+                      color: const Color(0xff9d9c62),
                       borderRadius: BorderRadius.circular(15)),
                   height: 90,
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Icon(
                           Icons.health_and_safety,
                           color: Colors.white,
@@ -116,30 +115,30 @@ class MainPage extends StatelessWidget {
                 )),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 31,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "Dokter Teramai",
                   style: TextStyle(fontSize: 20),
                 ),
                 TextButton(
                   style: TextButton.styleFrom(
-                      primary: Color(0xffe4572e),
-                      textStyle: TextStyle(
+                      primary: const Color(0xffe4572e),
+                      textStyle: const TextStyle(
                           fontFamily: "PoppinsSemiBold", fontSize: 10)),
                   onPressed: () {},
-                  child: Text("Lihat semua"),
+                  child: const Text("Lihat semua"),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 28,
             ),
-            ContainerDokter(
+            const ContainerDokter(
                 pathFoto: "assets/dr_christine_palmer_square.png",
                 nama: "Dr. Christine Palmer",
                 alamat: "Rumah Sakit Metro-General",
@@ -150,10 +149,10 @@ class MainPage extends StatelessWidget {
                 jumlahPasien: "578",
                 tahunMengabdi: "10",
                 resepObat: "1028"),
-            SizedBox(
+            const SizedBox(
               height: 24,
             ),
-            ContainerDokter(
+            const ContainerDokter(
                 pathFoto: "assets/doctor_stephen_strange_square.jpeg",
                 nama: "Dr. Stephen Strange",
                 alamat: "177A Bleecker Street",
@@ -164,10 +163,10 @@ class MainPage extends StatelessWidget {
                 jumlahPasien: "90",
                 tahunMengabdi: "6",
                 resepObat: "78"),
-            SizedBox(
+            const SizedBox(
               height: 24,
             ),
-            ContainerDokter(
+            const ContainerDokter(
                 pathFoto: "assets/dr_john_watson.jpg",
                 nama: "Dr. John Watson",
                 alamat: "221B Baker Street",
@@ -184,11 +183,9 @@ class MainPage extends StatelessWidget {
 }
 
 class ContainerDokter extends StatelessWidget {
-  final ContainerDokterController cdc = Get.put(ContainerDokterController());
-
-  ContainerDokter(
+  const ContainerDokter(
       {Key? key,
-      cdc.pathFoto.value = pathFoto,
+      required this.pathFoto,
       required this.nama,
       required this.alamat,
       required this.jamBuka,
@@ -209,13 +206,11 @@ class ContainerDokter extends StatelessWidget {
   final String tahunMengabdi;
   final String resepObat;
 
-  tc.
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
-          padding: EdgeInsets.symmetric(vertical: 7, horizontal: 13),
+          padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 13),
           alignment: Alignment.center,
           height: 91,
           decoration: BoxDecoration(
@@ -225,7 +220,7 @@ class ContainerDokter extends StatelessWidget {
               borderRadius: BorderRadius.circular(600),
               child: Image.asset(pathFoto),
             ),
-            SizedBox(
+            const SizedBox(
               width: 14,
             ),
             Column(
@@ -234,39 +229,40 @@ class ContainerDokter extends StatelessWidget {
               children: [
                 Text(
                   nama,
-                  style: TextStyle(fontSize: 15),
+                  style: const TextStyle(fontSize: 15),
                 ),
                 Text(
                   alamat,
                   overflow: TextOverflow.fade,
-                  style: TextStyle(fontSize: 10, fontFamily: "PoppinsRegular"),
+                  style: const TextStyle(
+                      fontSize: 10, fontFamily: "PoppinsRegular"),
                 ),
                 Row(
                   children: [
-                    Icon(Icons.timer, size: 16, color: Color(0xffa8c686)),
+                    const Icon(Icons.timer, size: 16, color: Color(0xffa8c686)),
                     Text(
                       jamBuka,
-                      style:
-                          TextStyle(fontSize: 10, fontFamily: "PoppinsMedium"),
+                      style: const TextStyle(
+                          fontSize: 10, fontFamily: "PoppinsMedium"),
                     ),
                   ],
                 )
               ],
             ),
-            Spacer(),
+            const Spacer(),
             ElevatedButton(
               onPressed: () {
                 Get.to(FormPage());
               },
-              child: Text(
-                "Antri",
-                style: TextStyle(color: Color(0xff333333)),
-              ),
               style: ElevatedButton.styleFrom(
                   //maximumSize: Size(86, 15),
                   // minimumSize: Size(86, 15),
-                  primary: Color(0xfff0f66e),
-                  textStyle: TextStyle(fontSize: 10)),
+                  primary: const Color(0xfff0f66e),
+                  textStyle: const TextStyle(fontSize: 10)),
+              child: const Text(
+                "Antri",
+                style: TextStyle(color: Color(0xff333333)),
+              ),
             )
           ])),
       onTap: () {
