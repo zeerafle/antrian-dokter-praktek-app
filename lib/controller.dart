@@ -16,15 +16,3 @@ class GetxTextController extends GetxController {
   final alergiObatController = TextEditingController();
   final keluhanController = TextEditingController();
 }
-
-class ContainerDokterController extends GetxController {
-  var pathFoto = "".obs;
-  var nama = "".obs;
-  var alamat = "".obs;
-  var jamBuka = "".obs;
-  var jabatan = "".obs;
-  var tentang = "".obs;
-  var jumlahPasien = "".obs;
-  var tahunMengabdi = "".obs;
-  var resepObat = "".obs;
-}
